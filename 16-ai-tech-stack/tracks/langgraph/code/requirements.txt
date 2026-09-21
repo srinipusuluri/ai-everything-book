@@ -1,0 +1,10 @@
+# Verified working set for this track (Python 3.11+; tested on 3.14).
+# Nothing here calls the network at runtime -- every script is offline.
+langgraph>=1.0,<2.0
+langchain-core>=1.0,<2.0
+langgraph-checkpoint-sqlite>=3.0      # used by checkpoint_and_interrupt.py
+
+# Optional, not needed to run the scripts:
+# langgraph-checkpoint-postgres>=3.0   # production checkpointer
+# langgraph-cli[inmem]>=0.4            # `langgraph dev` + LangGraph Studio
+# langchain>=1.0                       # create_agent, chat model integrations

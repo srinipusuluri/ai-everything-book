@@ -1,0 +1,2 @@
+# Both scripts in this module use only the Python standard library.
+# Nothing to install -- this file exists for consistency with the repo's structure.

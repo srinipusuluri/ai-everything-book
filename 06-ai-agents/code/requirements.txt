@@ -1,0 +1,3 @@
+# No external dependencies. Both scripts use only the standard library
+# (ast, json, random, statistics, dataclasses, operator) so the mechanics stay
+# 100% inspectable and the module runs with zero setup and no API key.

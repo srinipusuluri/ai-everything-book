@@ -1,0 +1,17 @@
+{
+  "name": "v1-baseline",
+  "version": "v1-terse-small",
+  "n": 9,
+  "metrics": {
+    "exact_match": 0.0,
+    "rubric_judge": 0.9333,
+    "fact_coverage": 0.8889,
+    "concision": 1.0,
+    "naive_length_judge": 0.2472,
+    "no_forbidden_claims": 1.0,
+    "latency_budget": 1.0,
+    "cost_budget": 1.0,
+    "p95_latency_ms": 497.6,
+    "total_cost_usd": 0.000452
+  }
+}

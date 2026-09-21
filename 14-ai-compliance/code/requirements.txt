@@ -1,0 +1,4 @@
+# Both scripts in this module use only the Python 3.9+ standard library
+# (argparse, dataclasses, json, pathlib, enum via plain str constants).
+# This file exists so the module matches the repo's standard layout and to
+# make explicit that there is nothing to `pip install` here.

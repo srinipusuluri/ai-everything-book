@@ -1,0 +1,6 @@
+numpy>=1.26
+scikit-learn>=1.4
+
+# rag_eval_metrics.py needs nothing beyond the standard library (re, math,
+# collections) -- numpy is imported there only for float formatting and the
+# script degrades gracefully (pure-Python mean) if numpy is unavailable.

@@ -1,0 +1,6 @@
+# Both scripts in this module use only the Python standard library
+# (random, re, dataclasses) -- no third-party dependencies are required.
+#
+# If you extend the exercises to plot the topology_simulator's output
+# (lab/EXERCISES.md), you'll want:
+matplotlib>=3.8

@@ -1,0 +1,23 @@
+# Python code samples are intentionally excluded from this repo checkin
+*.py
+__pycache__/
+*.pyc
+*.pyo
+
+# Python environments
+.venv/
+.venv-torch/
+venv/
+
+# Node
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+.claude/
+
+# Build intermediates (keep the final PDFs, drop the working HTML)
+book/_build/
+
+# Planning scratch file, not learner-facing content
+_modules.tsv

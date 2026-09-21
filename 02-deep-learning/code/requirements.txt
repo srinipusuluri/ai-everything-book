@@ -1,0 +1,5 @@
+numpy>=1.26
+scikit-learn>=1.4
+# For pytorch_training_loop.py (CPU build is fine for this module):
+torch>=2.2
+torchvision>=0.17

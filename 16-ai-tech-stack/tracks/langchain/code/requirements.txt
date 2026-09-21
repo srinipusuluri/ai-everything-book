@@ -1,0 +1,16 @@
+# Everything here runs OFFLINE: no API key, no network call, no provider package.
+# Pinned to the versions these scripts were written and verified against.
+langchain-core>=1.6,<2
+langchain>=1.4,<2            # pulls langgraph -- langchain v1 agents are built on it
+langchain-text-splitters>=1.1,<2
+pydantic>=2.9
+
+# Install into the shared venv:
+#   /Users/srinip/ai-all/.venv/bin/pip install -r requirements.txt
+#
+# You do NOT need these to run the examples, but you will need them for real work:
+#   langchain-anthropic          Claude models
+#   langchain-openai             GPT models
+#   langchain-community          the long tail of loaders / stores / tools
+#   langchain-classic            v0-era chains, retrievers, indexing API, hub
+#   langsmith                    tracing + evals (see ../../langsmith/)

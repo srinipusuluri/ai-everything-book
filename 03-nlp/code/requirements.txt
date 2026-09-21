@@ -1,0 +1,4 @@
+numpy>=1.26
+# optional, for comparing your tokenizer against a real one:
+tiktoken>=0.6
+transformers>=4.40

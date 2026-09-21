@@ -1,0 +1,5 @@
+# Both scripts in this folder use only the Python standard library
+# (dataclasses, re, __future__) so there is nothing to install. This file is
+# kept for consistency with the rest of the track and to make that fact explicit
+# rather than silent -- if a future exercise adds a dependency (e.g. a real
+# guardrail library like `presidio-analyzer` or a classifier), pin it here.

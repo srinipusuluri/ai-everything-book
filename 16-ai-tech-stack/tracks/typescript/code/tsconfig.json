@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /* Module resolution: "bundler" is the right answer for anything running
+       under tsx/vite/next. Use "nodenext" only if you are publishing a library
+       that must resolve exactly the way Node does. */
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2022",
+    "lib": ["es2023", "dom", "dom.iterable"],
+
+    /* The four flags that actually catch bugs. `strict` alone is not enough. */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+
+    /* Hygiene */
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+
+    /* We never emit; tsx transpiles and tsc is used as a type checker only. */
+    "noEmit": true
+  },
+  "include": ["*.ts"]
+}

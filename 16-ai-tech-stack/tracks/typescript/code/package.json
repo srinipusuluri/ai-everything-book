@@ -1,0 +1,25 @@
+{
+  "name": "ts-for-ai-apps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runnable examples for 16.2 - TypeScript for AI Applications. No network calls; the model is simulated.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "tools": "tsx typed-tool-calling.ts",
+    "stream": "tsx streaming-parser.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "all": "npm run typecheck && npm run tools && npm run stream"
+  },
+  "dependencies": {
+    "zod": "^4.6.5",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.4",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}

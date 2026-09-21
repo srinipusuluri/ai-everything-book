@@ -1,0 +1,11 @@
+# Both scripts in this folder run with ZERO dependencies and no AWS account.
+#   python bedrock_simulator.py          # fully offline, always works
+#   python converse_api_reference.py     # prints request/response shapes, exits 0
+#
+# Install these only when you want converse_api_reference.py to call AWS for real.
+boto3>=1.40.0
+botocore>=1.40.0
+
+# Optional, for the lab exercises:
+#   pytest      -- Exercise 2 asks you to test the tool loop
+#   rich        -- nicer terminal output if you extend the simulator

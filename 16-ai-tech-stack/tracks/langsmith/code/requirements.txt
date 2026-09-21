@@ -1,0 +1,17 @@
+# ---------------------------------------------------------------------------
+# The two teaching scripts need NOTHING. Standard library, Python 3.10+.
+#   python minimal_tracer.py
+#   python eval_harness.py
+# That is deliberate: LangSmith is a hosted service, and you should be able to
+# learn its data model on a plane.
+# ---------------------------------------------------------------------------
+
+# Only langsmith_instrumentation_reference.py --live needs anything, and only
+# if you have an account and actually want to send a trace.
+langsmith>=0.12,<1.0
+
+# Optional, for the wrapper examples in that reference file:
+# openai>=1.0            # wrap_openai
+# anthropic>=0.40        # wrap_anthropic
+# openevals>=0.2         # prebuilt LLM-as-judge evaluators (langchain-ai/openevals)
+# langchain>=0.3         # auto-tracing, if you use the framework at all

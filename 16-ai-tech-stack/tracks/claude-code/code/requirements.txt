@@ -1,0 +1,23 @@
+# Claude Code & Agent SDK track — Python dependencies
+#
+# NOTHING HERE IS REQUIRED to read or run code/agent_sdk_quickstart.py. That script is
+# offline-safe: with no SDK and no API key it prints an explanation and exits 0.
+#
+# Install these only when you want the agent to actually run (this costs money):
+#     /Users/srinip/ai-all/.venv/bin/pip install -r requirements.txt
+#     export ANTHROPIC_API_KEY=sk-ant-...
+#
+# The package was renamed: `claude-code-sdk` -> `claude-agent-sdk`
+# (imports: claude_code_sdk -> claude_agent_sdk, ClaudeCodeOptions -> ClaudeAgentOptions).
+# https://code.claude.com/docs/en/agent-sdk/migration-guide
+
+claude-agent-sdk>=0.2
+
+# The SDK bundles a native Claude Code binary as a platform wheel, so you usually do NOT need
+# a separate Claude Code install. Exception: if pip falls back to the source distribution
+# (e.g. ARM64 Windows), install Claude Code natively — https://code.claude.com/docs/en/setup
+#
+# TypeScript equivalent, for reference:
+#     npm install @anthropic-ai/claude-agent-sdk
+#     npm install --save-dev tsx
+# (`npm ci --omit=optional` skips the platform binary — reinstall without that flag.)

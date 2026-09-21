@@ -1,0 +1,9 @@
+# Official Model Context Protocol Python SDK.
+# https://github.com/modelcontextprotocol/python-sdk
+#
+# 2.x implements the current spec line (through the 2026-07-28 revision) while
+# remaining backward-compatible with the classic handshake-based protocol
+# (2024-11-05 / 2025-03-26 / 2025-06-18 / 2025-11-25) that both scripts in
+# this module exercise. Pin >=2.2.0 -- earlier 1.x releases used a different
+# top-level API (`FastMCP` instead of `MCPServer`, no discovery-era types).
+mcp>=2.2.0
