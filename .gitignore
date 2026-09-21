@@ -1,5 +1,4 @@
-# Python code samples are intentionally excluded from this repo checkin
-*.py
+# Python build artifacts
 __pycache__/
 *.pyc
 *.pyo
