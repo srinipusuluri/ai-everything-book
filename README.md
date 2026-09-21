@@ -12,6 +12,27 @@ standalone PDF per chapter in [`book/chapters/`](book/chapters/).
 
 ---
 
+## About me
+
+I'm Srini Pusuluri, a Sr. Salesforce/AI/CRM Program Architect. My work sits across
+AI/CRM/CPQ strategy, AI chatbots and agents, CPQ migrations, AI/ML, CDP, security, and
+integration — most recently centered on Agentforce. I hold 20 Salesforce certifications and 5
+AI certifications, have worked across Google, Elastic, GE, AT&T, IBM, and USAA, and I train
+Salesforce practitioners and speak at Dreamforce.
+
+**What inspired this repo:** in the last two years the AI stack moved from "an LLM you prompt"
+to "an agent you architect" — RAG, tool use, MCP, LangGraph, agentic orchestration, governance,
+evals, all of it landing on architects' plates at once, usually without a map connecting the
+pieces. I kept re-deriving the same foundations — why a transformer attends the way it does, why
+a RAG pipeline hallucinates anyway, why an agent's 95%-per-step accuracy still fails one task in
+three — for different audiences and different projects. This track is that map, written the way
+I wish I'd had it: one continuous path from the linear algebra under a gradient to a governed,
+evaluated, production agent, with runnable code and no hand-waving in between.
+
+Connect: [LinkedIn](https://www.linkedin.com/in/pusulurisrinivasa/)
+
+---
+
 ## How to use this repo
 
 Open a module's `README.md` for its syllabus, read `notes/`, run everything in `code/`, do
