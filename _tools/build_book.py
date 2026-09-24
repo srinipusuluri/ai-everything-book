@@ -67,6 +67,9 @@ CHROME_BIN = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 BOOK_TITLE = "AI End-to-End Learning Track"
 BOOK_SUBTITLE = ("The 20% of AI that carries the other 80%: from machine-learning foundations to LLMs, "
                  "agents, RAG, security, governance and production")
+AUTHOR_NAME = "Srini Pusuluri"
+AUTHOR_LINKEDIN = "https://www.linkedin.com/in/pusulurisrinivasa/"
+AUTHOR_GITHUB = "https://github.com/srinipusuluri/resume"
 
 INK = "#171923"
 MUTED = "#5b6172"
@@ -156,7 +159,10 @@ CSS += f"""
   font-family: {SANS}; font-size: 40pt; line-height: 1.03; letter-spacing: -0.02em;
   margin: 0 0 14px; max-width: 6.2in;
 }}
-.cover .sub {{ font-size: 12.4pt; color: {MUTED}; max-width: 5.7in; margin-bottom: 26px; }}
+.cover .sub {{ font-size: 12.4pt; color: {MUTED}; max-width: 5.7in; margin-bottom: 10px; }}
+.cover .byline {{ font-family: {SANS}; font-size: 10.8pt; font-weight: 600; letter-spacing: 0.02em;
+                  color: {INK}; margin-bottom: 26px; }}
+.cover .byline span {{ font-weight: 400; color: {MUTED}; }}
 .cover .stats {{ display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 14px; }}
 .cover .stat {{ border: 1px solid {LINE}; border-radius: 8px; padding: 9px 13px; min-width: 1.1in; }}
 .cover .stat b {{ display: block; font-family: {SANS}; font-size: 19pt; }}
@@ -662,6 +668,7 @@ def cover_html(parts: list[Part], chapters: int, pages: int) -> str:
         f'<div class="cover-band"></div>'
         f"<h1>{esc(BOOK_TITLE)}</h1>"
         f'<div class="sub">{esc(BOOK_SUBTITLE)}</div>'
+        f'<div class="byline"><span>by</span> {esc(AUTHOR_NAME)}</div>'
         f'<div class="stats">{boxes}</div>'
         f'<div class="fine">{esc(COVER_NOTE)}</div>'
         f"</section>"
@@ -691,6 +698,33 @@ def contents_html(parts: list[Part], numbers: dict[str, int]) -> str:
 COVER_NOTE = ("Generated from the markdown of this repository by _tools/build_book.py. "
               "A part is a module; a chapter is one file from it. Page numbers run continuously "
               "and are the same numbers you will find in the contents.")
+
+ABOUT_AUTHOR = f"""**{AUTHOR_NAME}** is a Sr. Salesforce/AI/CRM Program Architect. His work sits across
+AI/CRM/CPQ strategy, AI chatbots and agents, CPQ migrations, AI/ML, CDP, security and integration --
+most recently centered on Agentforce. He holds 20 Salesforce certifications and 5 AI certifications,
+has worked across Google, Elastic, GE, AT&T, IBM and USAA, and trains Salesforce practitioners and
+speaks at Dreamforce.
+
+| | |
+|---|---|
+| LinkedIn | [linkedin.com/in/pusulurisrinivasa]({AUTHOR_LINKEDIN}) |
+| GitHub / resume | [github.com/srinipusuluri/resume]({AUTHOR_GITHUB}) |
+"""
+
+WHY_THIS_BOOK = """In the last two years the AI stack moved from "an LLM you prompt" to "an agent you
+architect" -- RAG, tool use, MCP, LangGraph, agentic orchestration, governance, evals, all of it
+landing on architects' plates at once, usually without a map connecting the pieces.
+
+I kept re-deriving the same foundations -- why a transformer attends the way it does, why a RAG
+pipeline hallucinates anyway, why an agent's 95%-per-step accuracy still fails one task in three --
+for different audiences and different projects.
+
+This book is that map, written the way I wish I had had it: one continuous path from the linear
+algebra under a gradient to a governed, evaluated, production agent, with runnable code and no
+hand-waving in between. Sixteen modules, each with notes, runnable code, a lab, primary sources and
+a slide deck -- built to be worked through top to bottom, or dropped into wherever the gap actually
+is.
+"""
 
 HOW_TO_READ = """## Everyone starts here
 
@@ -752,6 +786,12 @@ def book_html(parts: list[Part], numbers: dict[str, int], pages: int,
     chapters = sum(len(p.chapters) for p in parts)
     body = [
         cover_html(parts, chapters, pages),
+        ('<section class="front-page" style="--accent:#%s">'
+         '<h1 class="page-title">About the author</h1><div class="page-rule"></div>%s</section>'
+         % (FALLBACK_ACCENT, md_to_html(ABOUT_AUTHOR))),
+        ('<section class="front-page" style="--accent:#%s">'
+         '<h1 class="page-title">Why this book</h1><div class="page-rule"></div>%s</section>'
+         % (FALLBACK_ACCENT, md_to_html(WHY_THIS_BOOK))),
         ('<section class="front-page" style="--accent:#%s">'
          '<h1 class="page-title">How to read this book</h1><div class="page-rule"></div>%s</section>'
          % (FALLBACK_ACCENT, md_to_html(HOW_TO_READ))),
@@ -1062,7 +1102,7 @@ def write_book(pdf_bytes: bytes, parts: list[Part], pages: int, path: Path) -> N
                                     max(chapter.start_page - 1, 0), parent=parent)
     writer.add_metadata({
         "/Title": BOOK_TITLE,
-        "/Author": "AI End-to-End Learning Track",
+        "/Author": AUTHOR_NAME,
         "/Subject": f"{len(parts)} parts, {len(chapters)} chapters, {pages} pages",
         "/Creator": "_tools/build_book.py (headless Chrome print-to-PDF)",
         "/Keywords": "; ".join(f.relative_to(ROOT).as_posix() for f in source_files(parts)),
